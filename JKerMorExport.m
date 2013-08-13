@@ -1,16 +1,18 @@
-classdef JKerMorExport < export.JaRMoSExport
-% AppExport: Export class for Android ROMSim App
+classdef JKerMorExport < JaRMoSExport
+% JKerMorExport: Export class for JaRMoS model generation from KerMor
+% models
 %
-%
-% @author Daniel Wirtz @date 2011-08-02
-%
+% @author Daniel Wirtz @date 2013-08-11
 
-%
-% This class is part of the framework
-% KerMor - Model Order Reduction using Kernels:
-% - \c Homepage http://www.agh.ians.uni-stuttgart.de/research/software/kermor.html
-% - \c Documentation http://www.agh.ians.uni-stuttgart.de/documentation/kermor/
-% - \c License @ref licensing
+    properties
+        % The directory of JKerMor sources
+        %
+        % Set this to the directory of the JKerMor project in order to be
+        % able to compile any java classes required for affine components.
+        %
+        % @type char
+        JKerMorSourceDirectory;
+    end
 
     methods
         function this = JKerMorExport
@@ -156,7 +158,7 @@ classdef JKerMorExport < export.JaRMoSExport
             
             % Assign source files and base here (from settings; here as
             % JaRMoSExport does not "know" the KerMor etc)
-            sourcebase = KerMor.App.JKerMorSourceDirectory;
+            sourcebase = this.JKerMorSourceDirectory;
             sourcefiles = sources;
             
             function exportKernel(k, file, folder)

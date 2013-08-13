@@ -4,6 +4,10 @@ classdef JaRMoSExport < handle
 %
 % @author Daniel Wirtz @date 2011-08-02
 %
+% @change{0,7,dw,2013-08-11} Moved the +export package from KerMor to an
+% own git repository (and re-included it in KerMor in
+% extern/matlabtojarmos)
+%
 % @change{0,6,dw,2012-03-24} Restructured the export functions and classes.
 % This class was the former AppExport class.
 %

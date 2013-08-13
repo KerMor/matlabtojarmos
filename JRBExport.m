@@ -1,15 +1,15 @@
-classdef RBJavaExport < handle
-    % RBJavaExport: Exporting rbmatlab models for the JRB project.
-    % This class is only here for having a safe version inside a git repo.
+classdef JRBExport < JaRMoSExport
+    % JRBExport: Exporting rbmatlab models for the JRB project.
     %
     % Exports rbmatlab models to a specific folder.
     % 
-    % The models can be exported in two formats, either for the JRB project (ans thus
-    % ROMSim/Android) or for the rbappmit-Android app.
-    %
+    % The models can be exported in two formats, either for the JRB project
+    % (and thus JaRMoS) or for the rbappmit-Android app.
     %
     % @author Daniel Wirtz @date 2011-08-26
-    % Initial code for rbappmit-format export by Markus Dihlmann, 21.08.2011
+    %
+    % Initial code for rbappmit-format export by Markus Dihlmann,
+    % 21.08.2011
     
     properties
         % The model export version to use. Can be either 0 for for JRB models or 1 for
