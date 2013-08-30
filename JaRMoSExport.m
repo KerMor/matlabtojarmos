@@ -211,11 +211,6 @@ classdef JaRMoSExport < handle
                 end
                 fwrite(f,n,'int32');
                 fwrite(f,m,'int32');
-%                 for i=1:n
-%                     for j=1:m
-%                         fwrite(f,mat(i,j),prec);
-%                     end
-%                 end
                 % Matlab Rev. 2009a: entries are written in column order, which must be transposed
                 % in order to read them in row order (native storage format in java
                 % apache.commons.math
