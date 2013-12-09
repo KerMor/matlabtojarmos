@@ -99,6 +99,25 @@ classdef Util
             end
             fclose(f);
         end
+        
+        function jsonobj = matrixToJSON(value)
+            % Takes a matrix and returns a JSON representation as
+            % JSONObject with the fields "dim" and "values".
+            %
+            % The elements are stored inside the values array as double
+            % values, iterating through the (multi-dimensional) matrix in
+            % the order of the dimensions given in "dim". For a simple
+            % matrix this is a column-wise from left to right storage.
+            %
+            % Parameters:
+            % value: A double matrix @type double
+            %
+            % Return values:
+            % jsonobj: A string representation of a JSON object @type char
+            siz = sprintf('%d, ',size(value));
+            vals = sprintf('%.16e, ',value(:));
+            jsonobj = sprintf('{"dim":[%s], "values":[%s]}',siz(1:end-2),vals(1:end-2));
+        end
     end
     
 end
