@@ -45,7 +45,7 @@ classdef Util
                 file = fullfile(folder,file);
             end
             
-            f = fopen(file,'w+',export.Util.MachineFormat);
+            f = fopen(file,'w+',Util.MachineFormat);
             try
                 [n,m] = size(mat);
                 if n > intmax('int32') || m > intmax('int32')
@@ -85,7 +85,7 @@ classdef Util
                 file = fullfile(folder,file);
             end
             
-            f = fopen(file,'w+',export.Util.MachineFormat);
+            f = fopen(file,'w+',Util.MachineFormat);
             try
                 s = length(vec);
                 if s > intmax('int32')
